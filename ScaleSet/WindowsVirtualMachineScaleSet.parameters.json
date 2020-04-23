@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmssName": {
+      "value": "rajscaleset"
+    },
+    "instanceCount": {
+      "value": 1
+    },
+    "adminUsername": {
+      "value": "rraj"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/c3fe8221-999a-44ed-adea-e0a7f90c47b9/resourceGroups/rajvault/providers/Microsoft.KeyVault/vaults/Rajvault2870"
+        },
+        "secretName": "VMadminpass"
+      }
+    }
+  }
+}
